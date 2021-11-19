@@ -45,3 +45,10 @@ $white: #FFFFFF;
   font-family: 'Ruda-Bold', sans-serif;
   font-weight: 700;
 }
+
+%for-images {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
