@@ -5,7 +5,7 @@
 
 .header {
   &__top {
-    padding: 14px 0;
+    padding: 17px 0 15px;
     background-color: $dark-800;
   }
 
@@ -242,6 +242,33 @@
   }
 
 }
+
+.top-slider {
+
+  &__inner {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+  }
+
+  &__item--discount {
+    height: 600px;
+    background-image: url('../images/slider/background-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__content {
+    padding: 24px 0 24px 24px;
+    border-radius: 4px; 
+    background-color: $background-slider;
+    width: 100%;
+  }
+
+}
+
+
 
 
 footer {
