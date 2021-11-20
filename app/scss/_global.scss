@@ -34,3 +34,7 @@ body {
   border: 0;
 }
 
+:active,:hover,:focus {
+  outline:transparent;
+}
+
