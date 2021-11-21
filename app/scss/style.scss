@@ -85,21 +85,21 @@
   &__link::before {
     position: absolute;
     @extend %for-images;
+    content: "";
     left: 0;
+    top: -4px;
   }
 
   &__link--delivery::before {
     background-image: url("../images/icons/del-address.svg");
     height: 22px;
-    width: 32px;
-    top: -4px;
+    width: 32px;  
   }
 
   &__link--phone::before {
     background-image: url("../images/icons/tel.svg");
     height: 22px;
     width: 22px;
-    top: -4px;
   }
 }
 
@@ -117,6 +117,8 @@
   appearance: none;
   max-width: 240px;
   width: 100%;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .catalog-wrapper {
@@ -125,6 +127,7 @@
 
   &::after {
     position: absolute;
+    content: "";
     @extend %for-images;
     background-image: url("../images/icons/nav_icon.svg");
     height: 17px;
@@ -217,10 +220,6 @@
     border-radius: 3px;
   }
 
-  &__link:active {
-    
-  }
-
   &__item:not(:last-child) {
     margin-right:5px;
   }
@@ -246,30 +245,126 @@
 .top-slider {
 
   &__inner {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+    position: relative;
   }
 
-  &__item--discount {
-    height: 600px;
-    background-image: url('../images/slider/background-1.jpg');
+  &__item {
+    padding-top: 142px;
+    min-height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+  }
+
+  &__item--discount {
+    background-image: url('../images/slider/background-1.jpg');
+  }
+
+  &__item--promotion {
+    background-image: url('../images/slider/background-2.jpg');
+  }
+
+  &__item--sale {
+    background-image: url('../images/slider/background-3.jpg');
+    background-position: bottom center;
   }
 
   &__content {
     padding: 24px 0 24px 24px;
     border-radius: 4px; 
     background-color: $background-slider;
-    width: 100%;
+  }
+
+  &__title {
+    max-width: 780px;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1.3;
+    @extend %ruda-900;
+    color: $dark-500;
+    margin-bottom: 8px;
+
+    & span {
+      color: $red-900;
+    }
+  }
+
+  &__descr {
+    max-width: 900px;
+    font-size: 16px;
+    @extend %opensans-400;
+    color: $dark-500;
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    display: inline-block;
+    @extend %button;
   }
 
 }
 
+.container-top {
+  width: 100%;
+}
 
+.slick-track {
+  display: flex;
+}
 
+.slick-list {
+  overflow: hidden;
+}
+
+.top-slider {
+  position: relative;
+
+  & .slick-arrow{
+    position: absolute;
+    top: calc(50% - 30px);
+    z-index: 10;
+    font-size: 0;
+    @extend %for-images;
+    border-radius: 6px;
+  }
+
+  & .slick-prev{
+    left: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: $background-slider;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url('../images/icons/chevron-slider.svg') ; 
+      width: 18px;
+      height: 32px;
+      top: 14px;
+      left: 21px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  & .slick-next{
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: $background-slider;
+    transform: scale(-1, 1);
+
+    &::before {
+      background: url('../images/icons/chevron-slider.svg');
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 32px;
+      top: 14px;
+      left: 21px;
+      background-repeat: no-repeat;
+    }
+  }
+}
 
 footer {
   background-color: $dark-800;

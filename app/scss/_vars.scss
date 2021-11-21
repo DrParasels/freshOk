@@ -48,9 +48,24 @@ $background-slider: rgba(255, 255, 255, 0.8);
   font-weight: 700;
 }
 
+%ruda-900 {
+  font-family: 'Ruda-Black', sans-serif;
+  font-weight: 900;
+}
+
 %for-images {
-  content: "";
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+%button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  background-color: $green-900;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  @extend %opensans-400;
+  color: $white;
 }
