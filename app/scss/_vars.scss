@@ -10,8 +10,16 @@ $yellow-900: #FFB800;
 $silver-600: #C1C1C1;
 $silver-100: #F6F6F6;
 $white: #FFFFFF;
+$hover-btn: #4D810C;
+$active-btn: rgba(0, 0, 0, 0.25);
+$opacity-btn: rgba(255, 255, 255, 0.5);
 $white-oppacity: rgba(255,255,255, 0.1);
 $background-slider: rgba(255, 255, 255, 0.8);
+$focus-slider: rgba(99, 166, 14, 0.5);
+$slider-arrow: #5A5A5A;
+$slider-bg: #F3F3F2;
+$product-border: rgba(17, 17, 17, 0.2);
+$product-hover: rgba(0, 0, 0, 0.1);
 
 %opensans-300 {
   font-family: 'OpenSans-Light', sans-serif;
@@ -57,6 +65,15 @@ $background-slider: rgba(255, 255, 255, 0.8);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+%icons-masks {
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 %button {

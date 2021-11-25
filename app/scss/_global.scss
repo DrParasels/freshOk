@@ -4,7 +4,7 @@ body {
 }
 
 body {
-  color: #121212;
+  color: $dark-900;
   font-size: 14px;
   line-height: 1.4;
   @extend %opensans-600;
