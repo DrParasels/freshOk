@@ -8,8 +8,8 @@ html {
   box-sizing: inherit;
 }
 
-ul[class],
-ol[class]{
+ul,
+ol {
   padding: 0;
 }
 
@@ -33,7 +33,7 @@ address {
   font-style: inherit;
 }
 
-ul[class] {
+ul {
   list-style: none;
 }
 
@@ -46,7 +46,7 @@ input,
 button,
 textarea,
 select {
-  font-style: inherit;
+  font-family: inherit;
   background-color: transparent;
   border: none;
   padding: 0;

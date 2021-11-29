@@ -68,21 +68,7 @@ $product-hover: rgba(0, 0, 0, 0.1);
 }
 
 %icons-masks {
-  -webkit-mask-size: cover;
   mask-size: cover;
-  -webkit-mask-position: center;
   mask-position: center;
-  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-}
-
-%button {
-  padding: 12px 24px;
-  border-radius: 6px;
-  background-color: $green-900;
-  font-size: 18px;
-  line-height: 1.3;
-  letter-spacing: 0.03em;
-  @extend %opensans-400;
-  color: $white;
 }
