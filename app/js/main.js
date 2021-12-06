@@ -3,5 +3,5 @@ $(function(){
    
   });
 
-  var mixer = mixitup('.top-products__content');
+  var mixer = mixitup('.top-products');
 });

@@ -3,17 +3,9 @@
   padding: 48px 0px 29px 0px;
   margin-bottom: 72px;
 
-  &__inner {
-    display: flex;
-    justify-content: center;
-  }
-
   &__list {
     display: flex;
-    justify-content: space-between;
-    max-width: 923px;
-    width: 100%;
-
+    justify-content: center;
   }
 
   &__item {
@@ -21,57 +13,49 @@
     width: 100%;
     padding-left: 74px;
     position: relative;
-  }
 
-  &__item--delivery {
-    position: relative;
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
 
     &::before {
       position: absolute;
       content: "";
-      background-image: url('../images/icons/scooter.svg');
+      background-color: $green-900;
       width: 50px;
       height: 50px;
       top: 0;
       left: 0;
     }
-  }
 
-  &__item--return {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      content: "";
-      background-image: url('../images/icons/return-box.svg');
-      width: 50px;
-      height: 50px;
-      top: 0;
-      left: 0;
+    &--delivery {
+      &::before {
+        mask: url("../images/sprite.svg#scooter") center / cover no-repeat;
+      }
     }
-  }
 
-  &__item--support {
-    position: relative;
+    &--return {
+      &::before {
+        mask: url("../images/sprite.svg#return-box") center / cover no-repeat;
+      }
+    }
 
-    &::before {
-      position: absolute;
-      content: "";
-      background-image: url('../images/icons/24-hours.svg');
-      width: 50px;
-      height: 50px;
-      top: 0;
-      left: 0;
+    &--support {
+      &::before { 
+        mask: url("../images/sprite.svg#24-hours") center / cover no-repeat;
+      }
     }
   }
 
   &__title {
     font-size: 16px;
+    font-weight: 600;
     margin-bottom: 6px;
+    letter-spacing: normal;
   }
 
   &__text {
-    @extend %opensans-400;
     color: $dark-500;
+    letter-spacing: normal;
   }
 }

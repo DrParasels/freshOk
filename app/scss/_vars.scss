@@ -10,9 +10,12 @@ $yellow-900: #FFB800;
 $silver-600: #C1C1C1;
 $silver-100: #F6F6F6;
 $white: #FFFFFF;
-$hover-btn: #4D810C;
+$green-dark: #4D810C;
+$black: #000000;
+
+
 $active-btn: rgba(0, 0, 0, 0.25);
-$opacity-btn: rgba(255, 255, 255, 0.5);
+$black-opacity: rgba(255, 255, 255, 0.5);
 $white-oppacity: rgba(255,255,255, 0.1);
 $background-slider: rgba(255, 255, 255, 0.8);
 $focus-slider: rgba(99, 166, 14, 0.5);
@@ -21,54 +24,16 @@ $slider-bg: #F3F3F2;
 $product-border: rgba(17, 17, 17, 0.2);
 $product-hover: rgba(0, 0, 0, 0.1);
 
-%opensans-300 {
-  font-family: 'OpenSans-Light', sans-serif;
-  font-weight: 300;
-}
-
-%opensans-400 {
-  font-family: 'OpenSans-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%opensans-600 {
-  font-family: 'OpenSans-SemiBold', sans-serif;
-  font-weight: 600;
-}
-
-%opensans-700 {
-  font-family: 'OpenSans-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%ruda-400 {
-  font-family: 'Ruda-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%ruda-600 {
-  font-family: 'Ruda-SemiBold', sans-serif;
-  font-weight: 600;
-}
-
-%ruda-700 {
-  font-family: 'Ruda-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%ruda-900 {
-  font-family: 'Ruda-Black', sans-serif;
-  font-weight: 900;
-}
-
-%for-images {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-%icons-masks {
-  mask-size: cover;
-  mask-position: center;
-  mask-repeat: no-repeat;
+@mixin line-clamp($lines: 1) {
+  @if $lines <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
 }
