@@ -1,0 +1,59 @@
+.banners {
+  padding-bottom: 72px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  &__item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 76px 32px 80px;
+    text-transform: uppercase;
+    color: $dark-500;
+  }
+
+  &__info {
+    max-width: 190px;
+
+    &--big {
+      color: $white;
+      max-width: 380px;
+
+      .banners__link {
+        border-bottom: 2px solid $white;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-family: 'Ruda';
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: normal;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: normal;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    padding-bottom: 4px;
+    border-bottom: 2px solid $dark-500;
+  }
+}

@@ -1,0 +1,142 @@
+.promo {
+  background-color: $silver-100;
+  padding: 72px 0;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__filter {
+    .filter {   
+      &__categories {
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  &__product-card {
+    padding: 12px 11px 11px;
+    background-color: $white;
+
+    .product-card {
+
+      &__inner {
+        display: flex;
+        align-items: center;
+      }
+
+      &__promo-link {
+        max-width: 100px;
+        width: 100%;
+        height: 100px;
+        margin-right: 12px;
+      }
+
+      &__img {
+        object-fit: cover;
+        object-position: center center;
+        height: 100%;
+        width: 100%;
+
+      }
+
+      &__availability {
+        text-transform: uppercase;
+          font-size: 10px;
+          line-height: 1;
+          margin-bottom: 4px;
+
+        .availability {
+          &__available {
+            color: $green-900;
+          }
+
+          &__low-available {
+            color: $red-900;
+          }
+
+          &__not-available {
+            color: $silver-600;
+          }
+        }
+      }
+
+      &__link {
+        display: block;
+        max-height: 58px;
+        margin-bottom: 6px;
+        @include line-clamp(3);
+      }
+
+      &__bottom {
+        display: block;
+        max-width: 164px;
+        width: 100%;
+      }
+
+      &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      &__prises {
+        display: flex;
+      }
+
+      &__price {
+        font-size: 20px;
+        font-weight: 600;
+        color: $dark-500;
+        margin-right: 12px;
+        margin-top: 2px;
+
+        &--old {
+          font-size: 12px;
+          align-self: flex-end;
+          color: $silver-600;
+          margin-bottom: 0;
+          margin-right: 0;
+        }
+      }
+
+      &__currency {
+        font-size: 14px;
+      }
+
+      &__rating {
+        display: block;
+        font-weight: 700;
+        line-height: 1;
+        position: relative;
+        padding-right: 20px;
+
+        &:before {
+          position: absolute;
+          content: "";
+          mask: url("../images/sprite.svg#star") center / cover no-repeat;
+          background-color: $yellow-900;
+          width: 16px;
+          height: 16px;
+          top: -2px;
+          left: 25px;
+
+        }
+      }
+    }
+  }
+
+  &__more {
+    display: block;
+    margin: 0 auto;
+  }
+}
