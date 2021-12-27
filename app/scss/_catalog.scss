@@ -1,0 +1,800 @@
+.catalog {
+  padding: 48px 0 72px;
+
+  @include media-2 {
+    padding: 40px 0 48px;
+  }
+
+  @include media-4 {
+    padding: 30px 0 36px;
+  }
+
+  &__title {
+    font-family: 'Ruda';
+    text-align: left;
+    margin-bottom: 48px;
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+
+    @include media-2 {
+      font-size: 36px;
+      margin-bottom: 36px;
+    }
+
+    @include media-4 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__filter {
+    margin-right: 30px;
+
+    @include media-3 {
+      position: absolute;
+      transform: translateX(-200%);
+    }
+
+    &--active {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: #fff;
+      padding-top: 76px;
+      margin-right: 0;
+      padding-right: 21px;
+      transform: translateX(0);
+      transition: transform 0.3s;
+      overflow-y: scroll;
+      max-height: 100vh;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #C4C4C4;
+        border-radius: 3px;
+        height: 130px;
+      }
+    }
+  }
+
+  .product-card {
+
+    &__link {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    &__img {
+      object-fit: contain;
+    }
+  }
+}
+
+.filter {
+  max-width: 300px;
+  width: 100%;
+
+  @include media-1 {
+    max-width: 250px;
+  }
+
+  @include media-2 {
+    max-width: 200px;
+  }
+
+  @include media-3 {
+    max-width: 321px;
+  }
+
+  &__categories,
+  &__promo,
+  &__prise,
+  &__brands {
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+
+  &__title {
+    display: block;
+    text-align: left;
+    width: 100%;
+    font-family: 'Ruda';
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    padding: 17px 0 17px 17px;
+    border: 1px solid $silver-600;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    background-color: #fff;
+    z-index: 10;
+
+    @include media-2 {
+      font-size: 20px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      mask: url("../images/sprite.svg#chevron-bottom") center / contain no-repeat;
+      transform: rotate(180deg);
+      background-color: $silver-600;
+      top: calc(50% - 5.5px);
+      right: 24px;
+      width: 18px;
+      height: 11px;
+      transition: transform 0.1s;
+
+      @include media-2 {
+        right: 8px;
+      }
+
+      @include media-3 {
+        right: 24px;
+      }
+    }
+  }
+
+  &__list {
+    padding: 19px 18px;
+    border: 1px solid $silver-600;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    max-height: 300px;
+    overflow-y: scroll;
+    transform: translateY(0);
+    z-index: 500;
+    transition: transform, max-height 0.3s;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #C4C4C4;
+      border-radius: 3px;
+      height: 130px;
+    }
+  }
+
+  .categories-list,
+  .promo-list,
+  .prise-list,
+  .brands-list {
+    &--close {
+      transform: translateY(-300%);
+      max-height: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  .categories-title,
+  .promo-title,
+  .prise-title,
+  .brands-title {
+    &--close {
+      border-radius: 6px;
+
+      &::after {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    font-size: 18px;
+    color: $dark-500;
+    line-height: 1.3;
+
+    @include media-2 {
+      text-align: left;
+    }
+  }
+}
+
+.filter-price {
+
+
+  &__extra-controls {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-2 {
+      text-align: center;
+    }
+
+    span {
+      font-family: 'Ruda';
+      font-size: 16px;
+      line-height: 1;
+      color: $silver-600;
+
+      @include media-2 {
+        display: block;
+      }
+    }
+  }
+
+  &__js-input-from,
+  &__js-input-to {
+    text-align: center;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'OpenSans';
+    line-height: 1;
+    color: $dark-500;
+    padding: 9px 12px;
+    width: 80px;
+    outline: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+    }
+
+    @include media-1 {
+      padding: 6px;
+      width: 60px;
+    }
+  }
+
+  &__extra-controls {
+    margin-bottom: 6px;
+}
+
+  &__form {
+
+    .irs--flat .irs-line {
+      top: 26px;
+      height: 2px;
+      background-color: #C4C4C4;
+      border-radius: 4px;
+    }
+
+    .irs--flat .irs-bar {
+      top: 26px;
+      height: 2px;
+      background-color: $green-900;
+    }
+
+    .irs--flat .irs-handle {
+      top: 18px;
+      width: 18px;
+      height: 18px;
+      background-color: $green-900;
+      border-radius: 50%;
+    }
+
+    .irs--flat .irs-min,
+    .irs--flat .irs-max {
+      display: none;
+    }
+
+    .irs--flat .irs-from,
+    .irs--flat .irs-to,
+    .irs--flat .irs-single {
+      display: none;
+    }
+
+    .irs--flat .irs-handle>i:first-child {
+      display: none;
+    }
+  }
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    padding-bottom: 13px;
+  }
+
+
+  &__box {
+    margin-right: 36px;
+  }
+
+  &__input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+
+    &:checked+.filter-checkbox__checkbox {
+      border-color: $dark-500;
+
+      &::before {
+        display: block;
+      }
+    }
+
+    &:hover+.filter-checkbox__checkbox {
+      border-color: $dark-500;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background-color: $silver-100;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+    margin-top: -12px;
+    transition: border-color 0.3s;
+
+    &::before {
+      display: none;
+      position: absolute;
+      content: '';
+      mask: url("../images/sprite.svg#checked") center / cover no-repeat;
+      background-color: $dark-500;
+      width: 12px;
+      height: 9px;
+      top: 6px;
+      left: 4px;
+    }
+  }
+
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.2;
+    color: $dark-500;
+  }
+}
+
+.catalog-content {
+  width: 100%;
+
+  .product-card {
+    padding-top: 56px;
+    &__wrapper {
+      margin: 14px 18px 18px;
+    }
+
+    &__link-img {
+      padding-bottom: 72.85%;
+
+      @include media-2 {
+        padding-bottom: 52%;
+      }
+
+      @include media-4 {
+        padding-bottom: 72%;
+      }
+    }
+
+    .availability {
+      @include media-4 {
+        font-size: 8px;
+      }
+    }
+
+    &__rating {
+      @include media-4 {
+        font-size: 10px;
+      }
+
+      &::before {
+        @include media-4 {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 48px;
+
+    @include media-3 {
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__filter-top {
+    display: flex;
+    form {
+      display: flex;
+    }
+  }
+
+  &__filter-settings {
+    display: none;
+    width: 47px;
+    height: 47px;
+    background-color: $silver-100;
+    border-radius: 3px;
+    position: relative;
+    margin-right: 10px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 32px;
+      height: 36px;
+      mask: url("../images/sprite.svg#settings") center / cover no-repeat;
+      background-color: $green-900;
+      top: 5px;
+      left: 8px;
+    }
+
+    @include media-3 {
+      display: block;
+    }
+
+    &--active {
+      position: absolute;
+      top: 10px;
+      left: 260px;
+      z-index: 1000;
+      background-color: transparent;
+      transform: translateX(0);
+      transition: transform 0.3s;
+      margin-right: 0;
+
+      &::before {
+        mask: url("../images/sprite.svg#close-btn") center / cover no-repeat;
+        background-color: #000;
+        width: 18px;
+        height: 18px;
+        top: 14px;
+        left: 14px;
+      }
+    }
+  }
+
+  .jq-selectbox.focused .jq-selectbox__select {
+    box-shadow: 0 0 0 3px $green-200;
+    border: 1px solid $silver-600;
+  }
+
+  &__filter-sort {
+    display: block;
+    font-size: 14px;
+    border-radius: 3px;
+    line-height: 1.2;
+    color: $dark-500;
+    position: relative;
+    margin-right: 15px;
+
+
+    .jq-selectbox__select {
+      height: auto;
+      padding: 15px 45px 13px 10px;
+      border: 1px solid $silver-600;
+      border-bottom-color: $silver-600;
+      border-radius: 3px;
+      background: transparent;
+      box-shadow: none;
+      font: 14px OpenSans, sans-serif;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      color: $dark-500;
+      text-shadow: none;
+      outline: transparent;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+
+    .jq-selectbox__trigger {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 34px;
+      height: 100%;
+      border-left: none;
+    }
+
+    @include media-4 {
+      font-size: 12px;
+    }
+
+    .dropdown{
+      border-radius: 3px 3px 0 0;
+    }
+
+    .jq-selectbox__trigger-arrow {
+      position: absolute;
+      top: 19px;
+      right: 16px;
+      width: 11px;
+      height: 6px;
+      border: transparent;
+      mask: url("../images/sprite.svg#chevron-bottom") center / cover no-repeat;
+      background-color: $silver-600;
+    }
+
+    .jq-selectbox__dropdown {
+      width: 100% !important;
+      margin: 2px 0 0;
+      padding: 0;
+      border: 1px solid $silver-600;
+      border-radius: 0 0 3px 3px;
+      background: #fff;
+      box-shadow: none;
+      font: 14px OpenSans, sans-serif;
+    }
+
+
+    // &::after {
+    //   position: absolute;
+    //   content: '';
+    //   mask: url("../images/sprite.svg#chevron-bottom") center / cover no-repeat;
+    //   background-color: $silver-600;
+    //   width: 11px;
+    //   height: 6px;
+    //   top: calc(50% - 3px);
+    //   right: 15px;
+    // }
+  }
+
+  &__filter-btn {
+    display: block;
+    background-color: #F6F6F6;
+    width: 47px;
+    height: 47px;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+
+    @include media-3 {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 6px;
+      left: 6px;
+    }
+
+    &--list {
+      margin-right: 15px;
+
+      &::before {
+        mask: url("../images/sprite.svg#btn-view-list") center / cover no-repeat;
+        width: 35px;
+        height: 35px;
+        background-color: $silver-600;
+
+      }
+    }
+
+    &--grid {
+      &::before {
+        mask: url("../images/sprite.svg#btn-view-grid") center / cover no-repeat;
+        width: 36px;
+        height: 34px;
+        background-color: $silver-600;
+      }
+    }
+
+    &--active {
+      &::before {
+        background-color: $green-900;
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 48px;
+
+    @include media-2 {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 30px;
+    }
+
+    @include media-3 {
+      grid-gap: 15px;
+    }
+
+    @include media-4 {
+      grid-gap: 5px;
+    }
+
+    &--list {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include media-2 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .product-card {
+        padding-top: 0;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        position: relative;
+
+        &__link-img {
+          margin: 7px 18px 5px 0;
+          width: 200px;
+          padding-bottom: 30%;
+
+          @include media-2 {
+            padding-bottom: 27.7%;
+          }
+        }
+
+        &__img {
+          object-fit: contain;
+          height: 142px;
+
+        }
+
+        &__wrapper {
+          max-width: 229px;
+          width: 100%;
+          margin: 12px 18px 12px 0;
+          justify-content: center;
+        }
+
+        &__inner-row {
+          position: relative;
+          top: 0;
+          margin-bottom: 12px;
+          padding: 0;
+        }
+
+        &__favourite {
+          top: 57px;
+          right: 13px;
+          z-index: 100;
+
+          @include media-2 {
+            right: 24px;
+          }
+        }
+
+        &__link {
+          max-width: 178px;
+          margin-bottom: 17px;
+        }
+
+        &__bages {
+          left: 7px;
+          top: 6px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-2 {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__more {
+    @include media-2 {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+
+  @include media-2 {
+    justify-content: center;
+  }
+
+  &__item {
+    @include media-4 {
+      &:nth-child(2n) {
+        display: none;
+      }
+    }
+  }
+
+  &__arrows {
+    border: 1px solid transparent;
+    width: 48px;
+    height: 48px;
+    background-color: $silver-100;
+    border-radius: 3px;
+    position: relative;
+    transition: border-color 0.3s;
+    &:hover {
+      border-color: $dark-500;
+    }
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      mask: url("../images/sprite.svg#chevron-slider") center / cover no-repeat;
+      background-color: $silver-600;
+      width: 11px;
+      height: 18px;
+      top: 15px;
+      left: 19px;
+    }
+  }
+
+  &__next {
+    &::before {
+      transform: scale(-1, 1);
+    }
+  }
+
+  &__prev {
+    margin-right: 6px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    border: 1px solid transparent;
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: $silver-100;
+    border-radius: 3px;
+    margin-right: 6px;
+    text-align: center;
+    padding: 25% 0;
+    font-size: 18px;
+    line-height: 1;
+    transition: border-color 0.3s;
+    &:hover {
+      border-color: $dark-500;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $green-200;
+    }
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &--active {
+      border: 1px solid $dark-500;
+    }
+  }
+}

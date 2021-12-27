@@ -1,27 +1,54 @@
 .brands {
   padding: 72px 0;
 
+  @include media-4	{
+    padding: 48px 0;
+  }
+
   &__list {
     display: flex;
     justify-content: center;
-    cursor: pointer;
     align-items: center;
+
+    @include media-1 {
+      flex-wrap: wrap;
+      height: 59px;
+      overflow: hidden;
+    }
+    @include media-4	{
+      justify-content: space-between;
+      margin: 0 26px;
+    }
   }
 
   &__item {
     opacity: 0.5;
     transition: opacity 0.3s;
+    @include media-1 {
+      margin-left: 70px;
+    }  
+    @include media-4	{
+      margin-left: 10px;
+    }
 
     &:not(:last-child) {
       margin-right: 140px;
-    }
 
+      @include media-1 {
+        margin-right: 70px;
+      }
+      @include media-4	{
+        margin-right: 10px;
+      }
+    }
+    
     &:hover {
       opacity: 1;
     }
   }
 
   &__img {
-    object-fit: cover;
+    width: 80px;
+    object-fit: contain;
   }
 }

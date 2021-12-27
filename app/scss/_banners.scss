@@ -1,10 +1,23 @@
 .banners {
   padding-bottom: 72px;
+  @include media-3	{
+    padding-bottom: 48px;
+  }
 
   &__list {
     display: grid;
     grid-template-columns: 2.1fr 1fr 1fr;
     grid-gap: 30px;
+
+    @include media-3	{
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    @include media-4 {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 15px;
+    }
   }
 
   &__item {
@@ -14,37 +27,60 @@
     padding: 76px 32px 80px;
     text-transform: uppercase;
     color: $dark-500;
-  }
+    border-radius: 4px;
 
-  &__info {
-    max-width: 190px;
+    @include media-2 {
+      padding: 50px 32px;
+    }
+    @include media-4	{
+      padding: 78px 70px 30px 15px;
+    }
 
     &--big {
       color: $white;
-      max-width: 380px;
-
-      .banners__link {
-        border-bottom: 2px solid $white;
+      @include media-3	{
+        grid-column-start: 1;
+        grid-column-end: 3;
       }
+      @include media-4	{
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+      
     }
   }
 
   &__subtitle {
+    display: block;
     margin-bottom: 18px;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.1em;
     line-height: 1;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    @include media-4	{
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
+    display: block;
+    max-width: 190px;
     margin-bottom: 8px;
     font-family: 'Ruda';
     font-weight: 600;
     font-size: 30px;
     letter-spacing: normal;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+    @include media-4	{
+      font-size: 24px;
+      margin-bottom: 70px;
+      max-width: 160px;
+    }
+
+    &--big {
+      max-width: 350px;
+    }
   }
 
   &__link {
@@ -55,5 +91,13 @@
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     padding-bottom: 4px;
     border-bottom: 2px solid $dark-500;
+
+    @include media-1 {
+      line-height: 2;
+    }
+
+    &--big {
+      border-color: $white;
+    }
   }
 }

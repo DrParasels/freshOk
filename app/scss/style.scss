@@ -2,6 +2,7 @@
 @import 'fonts';
 @import 'reset';
 @import 'global';
+@import 'libs';
 
 @import 'header';
 @import 'footer';
@@ -12,3 +13,9 @@
 @import 'promo';
 @import 'brands';
 @import 'news';
+
+@import 'catalog';
+
+@import 'product';
+@import 'tabs';
+@import 'recent-products';
